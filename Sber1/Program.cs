@@ -20,10 +20,10 @@ namespace Sber1
                     s = new Seller { Salon = "Lada", Street = "Pr.Lenina", House = "25A", Price = 700000 };
                     break;
                 case "Nissan":
-                    s = new Seller { Salon = "Lada", Street = "Sovetskaya", House = "42", Price = 1552000 };
+                    s = new Seller { Salon = "Nissan", Street = "Sovetskaya", House = "42", Price = 1552000 };
                     break;
                 case "Toyota":
-                    s = new Seller { Salon = "Lada", Street = "Oktabrskaya", House = "195", Price = 1245000 };
+                    s = new Seller { Salon = "Toyota", Street = "Oktabrskaya", House = "195", Price = 1245000 };
                     break;
                 default:
                     s = new Seller { Salon = "NaN", Street = "NaN", House = "NaN", Price = 0 };
@@ -35,7 +35,7 @@ namespace Sber1
         static void Main(string[] args)
         {
             using var db = new DbCont();
-            Auto[] CarList;
+            Auto[] CarList; //Статический метод Exists() проверяет, содержит ли массив определенный элемент
             var name = from auto in db.auto
                        select auto;
                        //select new { auto.Manufacturer, auto.Model, auto.HP, auto.Date };
